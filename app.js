@@ -21,7 +21,7 @@ app.post('/incoming', (req, res) => {
   try {
     const response = new VoiceResponse();
     const connect = response.connect();
-    connect.stream({ url: `wss://${process.env.SERVER}/connection` });
+    connect.stream({ url: `wss://89cf-100-8-68-120.ngrok-free.app/connection` });
   
     res.type('text/xml');
     res.end(response.toString());

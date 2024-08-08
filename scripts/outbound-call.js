@@ -13,11 +13,13 @@ async function makeOutBoundCall() {
 
   await client.calls
     .create({
-      url: `https://${process.env.SERVER}/incoming`,
+      url: `https://89cf-100-8-68-120.ngrok-free.app/incoming`,
       to: process.env.YOUR_NUMBER,
-      from: process.env.FROM_NUMBER
+      from: process.env.FROM_NUMBER,
+      record: true,
     })
     .then(call => console.log(call.sid));
 }
 
 makeOutBoundCall();
+console.log(`https://${process.env.SERVER}/incoming`);
